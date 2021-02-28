@@ -1,0 +1,69 @@
+[
+  {
+    "id": 2,
+    "title": "教材管理",
+    "icon": "&#xe653;",
+    "href": "book/index",
+    "spread": false,
+    "target": null,
+    "children": [],
+    "checkArr": "0",
+    "parentId": 1
+  },
+  {
+    "id": 5,
+    "title": "购书管理",
+    "icon": "&#xe620;",
+    "href": "",
+    "spread": false,
+    "target": null,
+    "children": [
+      {
+        "id": 6,
+        "title": "缺书登记",
+        "icon": "&#xe672;",
+        "href": "bookRegister/index",
+        "spread": false,
+        "target": null,
+        "children": [],
+        "checkArr": "0",
+        "parentId": 2
+      },
+      {
+        "id": 7,
+        "title": "我的购书单",
+        "icon": "&#xe672;",
+        "href": "order/index",
+        "spread": false,
+        "target": null,
+        "children": [],
+        "checkArr": "0",
+        "parentId": 2
+      }
+    ],
+    "checkArr": "0",
+    "parentId": 1
+  },
+  {
+    "id": 2,
+    "title": "库存管理",
+    "icon": "&#xe653;",
+    "href": "bookstock/index",
+    "spread": false,
+    "target": null,
+    "children": [],
+    "checkArr": "0",
+    "parentId": 1
+  },
+  {
+    "id": 2,
+    "title": "缺书单",
+    "icon": "&#xe653;",
+    "href": "bookRegister/all",
+    "spread": false,
+    "target": null,
+    "children": [],
+    "checkArr": "0",
+    "parentId": 1
+  }
+]

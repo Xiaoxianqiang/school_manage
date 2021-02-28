@@ -1,0 +1,8 @@
+.listContent .searchForm{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 20%;
+}
+
+.listContent .searchForm .layui-card{-webkit-box-shadow:0 0 20px rgba(0,0,0,.08);box-shadow:0 0 20px rgba(0,0,0,.08);border-radius:5px}
+.listContent .tableContent .layui-card{-webkit-box-shadow:0 0 20px rgba(0,0,0,.08);box-shadow:0 0 20px rgba(0,0,0,.08);border-radius:5px}

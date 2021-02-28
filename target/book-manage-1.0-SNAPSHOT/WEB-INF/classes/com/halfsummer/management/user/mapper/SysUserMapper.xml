@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.halfsummer..management.user.mapper.UserMapper">
+
+    
+    <!-- 表字段 -->
+    <!--<sql id="baseColumns">-->
+         <!--t.id-->
+        <!--, t.book_name-->
+        <!--, t.book_summary-->
+        <!--, t.book_price-->
+        <!--, t.update_by-->
+        <!--, t.update_by_name-->
+        <!--, t.update_time-->
+        <!--</sql> -->
+    <!---->
+    <!--&lt;!&ndash; 分页查询 &ndash;&gt;-->
+    <!--<select id="list" resultMap="BaseResultMap" parameterType="com.halfsummer.management.user.entity.User">-->
+		<!--SELECT         -->
+        	<!--<include refid="baseColumns" />-->
+		<!--FROM book t-->
+        <!--<trim prefix="WHERE" prefixOverrides="AND | OR">            -->
+                          <!--<if test="id != null  and id != ''" >-->
+              <!--and id=#{id} -->
+              <!--</if>-->
+                          <!--<if test="bookName != null  and bookName != ''" >-->
+              <!--and book_name like concat('%', #{bookName}, '%')-->
+              <!--</if>-->
+                          <!--<if test="bookSummary != null  and bookSummary != ''" >-->
+              <!--and book_summary=#{bookSummary} -->
+              <!--</if>-->
+                          <!--<if test="bookPrice != null  and bookPrice != ''" >-->
+              <!--and book_price=#{bookPrice} -->
+              <!--</if>-->
+                          <!--<if test="updateBy != null  and updateBy != ''" >-->
+              <!--and update_by=#{updateBy} -->
+              <!--</if>-->
+                          <!--<if test="updateByName != null  and updateByName != ''" >-->
+              <!--and update_by_name=#{updateByName} -->
+              <!--</if>-->
+                          <!--<if test="updateTime != null  and updateTime != ''" >-->
+              <!--and update_time=#{updateTime} -->
+              <!--</if>-->
+                    <!--</trim>-->
+	<!--</select>-->
+ <!---->
+ 	<!-- 根据主键获取单条记录 -->
+    <select id="getById" resultMap="BaseResultMap" parameterType="com.halfsummer.management.user.entity.User">
+		SELECT         
+        	<include refid="baseColumns" />
+		FROM `user`
+		WHERE id = #{id}
+	</select>
+
+	<!-- 插入全部字段 -->
+    <insert id="insert" parameterType="com.halfsummer.management.user.entity.User"
+		keyProperty="id" keyColumn="id" useGeneratedKeys="true"
+    >
+	INSERT INTO `user`
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+        `id`,
+        `name`,
+        `user_no`
+        `password`,
+        `gender`,
+        `user_no`,
+        `role_id`;
+        `class_grade`
+    </trim>
+    <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+        #{id},
+        #{name},
+        #{user_no},
+        #{password},
+        #{gender},
+        #{userNo},
+        #{roleId},
+        #{classGrade},
+    </trim>
+	</insert>
+
+	<!-- 更新,更新全部字段 -->
+    <update id="update" parameterType="com.halfsummer.management.user.entity.User">
+        UPDATE `user`
+         <set>
+             `name`=#{name},
+             `password`=#{password},
+             `gender`=#{gender},
+             `class_grade`=#{classGrade}
+         </set>
+        WHERE id = #{id}
+    </update>  
+
+		
+	<!-- 根据主键删除记录 -->
+	<delete id="delete" parameterType="com.halfsummer.management.user.entity.User">
+		delete `user`
+		WHERE id = #{id}
+	</delete>
+
+
+</mapper>

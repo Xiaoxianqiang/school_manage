@@ -52,6 +52,8 @@ public enum CommonEnum implements BaseInfoInterface {
 
     BOOK_NOT_EXIST(20001,"书籍不存在"),
     BOOK_STOCK_SHORT(20002,"库存不足"),
+
+    CAPTCHA_ERROR(9935,"验证码错误"),
     ;
 
     /**

@@ -10,8 +10,8 @@ public class CourseArrangements {
     /** 学生用户ID */
     private String userId;
 
-    /** 管理下载路径 */
-    private String url;
+    /** 每日计划 */
+    private String plan;
 
     /** 老师建议 */
     private String suggest;
@@ -44,12 +44,12 @@ public class CourseArrangements {
         this.userId = userId;
     }
 
-    public String getUrl() {
-        return url;
+    public String getPlan() {
+        return plan;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setPlan(String plan) {
+        this.plan = plan;
     }
 
     public String getSuggest() {

@@ -18,7 +18,7 @@
                 and role_id=#{roleId}
             </if>
             <if test="classGrade != null  and classGrade != ''" >
-                and class_grade=#{classGrade}
+                and class_gradelike concat('%', #{classGrade}, '%')
             </if>
             <if test="startTime != null  and startTime != ''" >
                 and create_time>#{startTime}

@@ -8,12 +8,14 @@ import com.halfsummer.management.arrangements.entity.CourseArrangementsDemo;
 import com.halfsummer.management.arrangements.request.*;
 import com.halfsummer.management.arrangements.service.CourseArrangementsDemoService;
 import com.halfsummer.management.arrangements.service.CourseArrangementsService;
+import com.halfsummer.management.user.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -24,7 +26,10 @@ public class CourseArrangementsController {
 
     @RequestMapping("/add")
     @ResponseBody
-    public ResultInfo add(@RequestBody AddArrangementsRequest arrangements){
+    public ResultInfo add(@RequestBody AddArrangementsRequest arrangements,
+                          HttpServletRequest request){
+        User user=(User)request.getSession().getAttribute("user");
+        arrangements.setUserId(user.getId());
         courseArrangementsService.add(arrangements);
 
         return new ResultInfo(CommonEnum.SUCCESS.getResultCode(),

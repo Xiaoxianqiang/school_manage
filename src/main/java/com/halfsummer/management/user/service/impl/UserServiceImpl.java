@@ -2,6 +2,8 @@ package com.halfsummer.management.user.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.halfsummer.baseframework.enums.CommonEnum;
+import com.halfsummer.baseframework.result.ResultInfo;
 import com.halfsummer.baseframework.util.UuidUtil;
 import com.halfsummer.management.arrangements.entity.Questionnaire;
 import com.halfsummer.management.user.entity.User;
@@ -23,15 +25,18 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public User login(LogUserRequest user) {
+    public ResultInfo login(LogUserRequest user) {
         User user1 = userMapper.getByNo(user.getUserNo());
         if(user1==null){
-            //TODO 没有该账户
+            return new ResultInfo(CommonEnum.DATA_NOT_EXIST.getResultCode(),
+                    CommonEnum.DATA_NOT_EXIST.getResultMsg());
         }
-        if(!user1.getPassword().equals(user.getPassword())){
-            //TODO 密码错误
+        if(user1.getPassword().equals(user.getPassword())){
+            return new ResultInfo(CommonEnum.PWD_ERROR.getResultCode(),
+                    CommonEnum.PWD_ERROR.getResultMsg());
         }
-        return user1;
+        return new ResultInfo(CommonEnum.SUCCESS.getResultCode(),
+                CommonEnum.SUCCESS.getResultMsg(),user1);
     }
 
     @Override

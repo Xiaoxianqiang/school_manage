@@ -4,8 +4,8 @@ public class AddArrangementsRequest {
     /** 学生用户ID */
     private String userId;
 
-    /** 管理下载路径 */
-    private String url;
+    /** 每日计划 */
+    private String plan;
 
     public String getUserId() {
         return userId;
@@ -15,11 +15,11 @@ public class AddArrangementsRequest {
         this.userId = userId;
     }
 
-    public String getUrl() {
-        return url;
+    public String getPlan() {
+        return plan;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setPlan(String plan) {
+        this.plan = plan;
     }
 }

@@ -48,10 +48,10 @@ public class CourseArrangementsServiceImpl implements CourseArrangementsService 
     }
 
     @Override
-    public int update(UpdateArrangementsRequest questionnaire) {
-        CourseArrangements courseArrangements = new CourseArrangements();
-        BeanUtils.copyProperties(questionnaire, courseArrangements);
-        return courseArrangementsMapper.update(courseArrangements);
+    public int update(UpdateArrangementsRequest arrangements) {
+        CourseArrangements byId = courseArrangementsMapper.getById(arrangements.getId());
+        byId.setPlan(arrangements.getPlan());
+        return courseArrangementsMapper.update(byId);
     }
 
     @Override

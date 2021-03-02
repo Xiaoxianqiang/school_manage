@@ -4,10 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.halfsummer.baseframework.enums.CommonEnum;
 import com.halfsummer.baseframework.result.ResultInfo;
 import com.halfsummer.management.user.entity.User;
-import com.halfsummer.management.user.request.AddUserRequest;
-import com.halfsummer.management.user.request.ListUserRequest;
-import com.halfsummer.management.user.request.LogUserRequest;
-import com.halfsummer.management.user.request.UpdateUserRequest;
+import com.halfsummer.management.user.request.*;
 import com.halfsummer.management.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,15 +30,29 @@ public class UserController {
     public ResultInfo login(@RequestBody LogUserRequest user, HttpServletRequest request){
         String code = request.getSession().getAttribute("code").toString();
         if(code==null){
-            //TODO 判空
+            return new ResultInfo(CommonEnum.PARAM_EMPTY.getResultCode(),
+                    "code:" +CommonEnum.PARAM_EMPTY.getResultMsg());
         }
         if(!code.equals(user.getCode())){
-            //TODO 验证码不一致
+            return new ResultInfo(CommonEnum.CAPTCHA_ERROR.getResultCode(),
+                    "code:" +CommonEnum.CAPTCHA_ERROR.getResultMsg());
         }
-        User login = userService.login(user);
-        request.getSession().setAttribute("user", login);
+        ResultInfo login = userService.login(user);
+        request.getSession().setAttribute("user",login.getData());
+        return login;
+
+    }
+    /**
+     * 新增
+     * @return
+     */
+    @RequestMapping("/query")
+    @ResponseBody
+    public ResultInfo add(@RequestBody QueryUserRequest user, HttpServletRequest request){
+        User byId = userService.getById(user.getId());
+
         return new ResultInfo(CommonEnum.SUCCESS.getResultCode(),
-                CommonEnum.SUCCESS.getResultMsg(),login);
+                CommonEnum.SUCCESS.getResultMsg(),byId);
     }
 
     /**
@@ -53,15 +64,15 @@ public class UserController {
     public ResultInfo add(@RequestBody AddUserRequest user, HttpServletRequest request){
         String code = request.getSession().getAttribute("code").toString();
         if(code==null){
-            //TODO 判空
+            return new ResultInfo(CommonEnum.PARAM_EMPTY.getResultCode(),
+                    "code:" +CommonEnum.PARAM_EMPTY.getResultMsg());
         }
         if(!code.equals(user.getCode())){
-            //TODO 验证码不一致
+            return new ResultInfo(CommonEnum.CAPTCHA_ERROR.getResultCode(),
+                    "code:" +CommonEnum.CAPTCHA_ERROR.getResultMsg());
         }
         int add = userService.add(user);
-        if(add!=1){
-            //TODO 添加失败
-        }
+
         return new ResultInfo(CommonEnum.SUCCESS.getResultCode(),
                 CommonEnum.SUCCESS.getResultMsg());
     }

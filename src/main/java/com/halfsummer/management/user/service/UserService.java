@@ -1,6 +1,7 @@
 package com.halfsummer.management.user.service;
 
 import com.github.pagehelper.PageInfo;
+import com.halfsummer.baseframework.result.ResultInfo;
 import com.halfsummer.management.user.entity.User;
 import com.halfsummer.management.user.request.AddUserRequest;
 import com.halfsummer.management.user.request.ListUserRequest;
@@ -14,7 +15,7 @@ public interface UserService {
      * 用户登录
      * @param user
      */
-    User login(LogUserRequest user);
+    ResultInfo login(LogUserRequest user);
 
     /**
      * 获取用户信息

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/admin/user")
 public class SysUserController {
     @Autowired
     private SysUserService sysUserService;

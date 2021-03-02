@@ -1,6 +1,7 @@
 package com.halfsummer.management.arrangements.mapper;
 
 import com.halfsummer.management.arrangements.entity.Questionnaire;
+import com.halfsummer.management.arrangements.request.ListQuestionnaireRequest;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -42,5 +43,5 @@ public interface QuestionnaireMapper {
      * @param questionnaire
      * @return
      */
-    List<Questionnaire> list(Questionnaire questionnaire);
+    List<Questionnaire> list(ListQuestionnaireRequest questionnaire);
 }

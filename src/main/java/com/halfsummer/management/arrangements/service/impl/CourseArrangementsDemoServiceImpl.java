@@ -1,6 +1,9 @@
 package com.halfsummer.management.arrangements.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.halfsummer.baseframework.util.UuidUtil;
+import com.halfsummer.management.arrangements.entity.CourseArrangements;
 import com.halfsummer.management.arrangements.entity.CourseArrangementsDemo;
 import com.halfsummer.management.arrangements.mapper.CourseArrangementsDemoMapper;
 import com.halfsummer.management.arrangements.request.AddArrangementsDemoRequest;
@@ -32,8 +35,11 @@ public class CourseArrangementsDemoServiceImpl implements CourseArrangementsDemo
     }
 
     @Override
-    public List<CourseArrangementsDemo> list(ListArrangementsDemoRequest questionnaire) {
-        return courseArrangementsDemoMapper.list(questionnaire);
+    public PageInfo<CourseArrangementsDemo> list(ListArrangementsDemoRequest questionnaire) {
+        PageHelper.startPage(questionnaire.getPageNum(), questionnaire.getPageSize());
+        List<CourseArrangementsDemo> list = courseArrangementsDemoMapper.list(questionnaire);
+        PageInfo<CourseArrangementsDemo> pageInfo = new PageInfo<>(list);
+        return pageInfo;
     }
 
     @Override
@@ -43,8 +49,8 @@ public class CourseArrangementsDemoServiceImpl implements CourseArrangementsDemo
 
     @Override
     public int update(UpdateArrangementsDemoRequest questionnaire) {
-        CourseArrangementsDemo courseArrangementsDemo = new CourseArrangementsDemo();
-        BeanUtils.copyProperties(questionnaire, courseArrangementsDemo);
+        CourseArrangementsDemo courseArrangementsDemo = courseArrangementsDemoMapper.getById(questionnaire.getId());
+        courseArrangementsDemo.setUrl(questionnaire.getUrl());
         return courseArrangementsDemoMapper.update(courseArrangementsDemo);
     }
 }

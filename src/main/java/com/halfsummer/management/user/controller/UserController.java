@@ -1,5 +1,6 @@
 package com.halfsummer.management.user.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.halfsummer.baseframework.enums.CommonEnum;
 import com.halfsummer.baseframework.result.ResultInfo;
 import com.halfsummer.management.user.entity.User;
@@ -86,7 +87,7 @@ public class UserController {
     @RequestMapping("/list")
     @ResponseBody
     public ResultInfo list(@RequestBody ListUserRequest user){
-        List<User> list = userService.list(user);
+        PageInfo<User> list = userService.list(user);
 
         return new ResultInfo(CommonEnum.SUCCESS.getResultCode(),
                 CommonEnum.SUCCESS.getResultMsg(),list);

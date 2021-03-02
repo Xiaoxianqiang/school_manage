@@ -1,5 +1,6 @@
 package com.halfsummer.management.arrangements.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.halfsummer.baseframework.enums.CommonEnum;
 import com.halfsummer.baseframework.result.ResultInfo;
 import com.halfsummer.management.arrangements.entity.CourseArrangementsDemo;
@@ -39,7 +40,7 @@ public class CourseArrangementsDemoController {
     @RequestMapping("/list")
     @ResponseBody
     public ResultInfo list(@RequestBody ListArrangementsDemoRequest arrangementsDemo){
-        List<CourseArrangementsDemo> list = courseArrangementsDemoService.list(arrangementsDemo);
+        PageInfo<CourseArrangementsDemo> list = courseArrangementsDemoService.list(arrangementsDemo);
 
         return new ResultInfo(CommonEnum.SUCCESS.getResultCode(),
                 CommonEnum.SUCCESS.getResultMsg(),list);

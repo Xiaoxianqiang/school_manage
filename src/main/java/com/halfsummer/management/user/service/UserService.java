@@ -1,5 +1,6 @@
 package com.halfsummer.management.user.service;
 
+import com.github.pagehelper.PageInfo;
 import com.halfsummer.management.user.entity.User;
 import com.halfsummer.management.user.request.AddUserRequest;
 import com.halfsummer.management.user.request.ListUserRequest;
@@ -27,7 +28,7 @@ public interface UserService {
      * @param user
      * @return
      */
-    List<User> list(ListUserRequest user);
+    PageInfo<User> list(ListUserRequest user);
 
     /**
      * 新建用户

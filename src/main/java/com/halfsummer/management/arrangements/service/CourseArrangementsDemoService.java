@@ -1,5 +1,6 @@
 package com.halfsummer.management.arrangements.service;
 
+import com.github.pagehelper.PageInfo;
 import com.halfsummer.management.arrangements.entity.CourseArrangementsDemo;
 import com.halfsummer.management.arrangements.entity.Questionnaire;
 import com.halfsummer.management.arrangements.request.*;
@@ -15,7 +16,7 @@ public interface CourseArrangementsDemoService {
     CourseArrangementsDemo getById(String id);
 
     /**
-     * 添加问卷
+     * 添加模板
      * @param questionnaire
      * @return
      */
@@ -26,17 +27,17 @@ public interface CourseArrangementsDemoService {
      * @param questionnaire
      * @return
      */
-    List<CourseArrangementsDemo> list(ListArrangementsDemoRequest questionnaire);
+    PageInfo<CourseArrangementsDemo> list(ListArrangementsDemoRequest questionnaire);
 
     /**
-     * 删除问卷
+     * 删除模板
      * @param id
      * @return
      */
     int delete(String id);
 
     /**
-     * 修改问卷
+     * 修改模板
      * @param questionnaire
      * @return
      */

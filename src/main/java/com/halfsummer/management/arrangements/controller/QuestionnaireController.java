@@ -1,5 +1,6 @@
 package com.halfsummer.management.arrangements.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.halfsummer.baseframework.enums.CommonEnum;
 import com.halfsummer.baseframework.result.ResultInfo;
 import com.halfsummer.management.arrangements.entity.Questionnaire;
@@ -38,7 +39,7 @@ public class QuestionnaireController {
     @RequestMapping("/list")
     @ResponseBody
     public ResultInfo list(@RequestBody ListQuestionnaireRequest questionnaire){
-        List<Questionnaire> list = questionnaireService.list(questionnaire);
+        PageInfo<Questionnaire> list = questionnaireService.list(questionnaire);
 
         return new ResultInfo(CommonEnum.SUCCESS.getResultCode(),
                 CommonEnum.SUCCESS.getResultMsg(),list);

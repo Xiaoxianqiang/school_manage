@@ -24,35 +24,7 @@
                 and create_time>#{startTime}
             </if>
             <if test="endTime != null  and endTime != ''" >
-                and create_time>#{endTime}
-            </if>
-            <if test="star != null  and star != '' and end!=null and end!=''" >
-                limit #{start},#{end}
-            </if>
-        </trim>
-    </select>
-    <select id="listTotall" resultType="int" parameterType="com.halfsummer.management.user.request.ListUserRequest">
-        SELECT
-        1
-        FROM `user`
-        <trim prefix="WHERE" prefixOverrides="AND | OR">
-            <if test="name != null  and name != ''" >
-                and `name` like concat('%', #{name}, '%')
-            </if>
-            <if test="userNo != null  and userNo != ''" >
-                and user_no=#{userNo}
-            </if>
-            <if test="roleId != null  and roleId != ''" >
-                and role_id=#{roleId}
-            </if>
-            <if test="classGrade != null  and classGrade != ''" >
-                and class_grade=#{classGrade}
-            </if>
-            <if test="startTime != null  and startTime != ''" >
-                and create_time>#{startTime}
-            </if>
-            <if test="endTime != null  and endTime != ''" >
-                and create_time>#{endTime}
+                and create_time &lt; #{endTime}
             </if>
         </trim>
     </select>

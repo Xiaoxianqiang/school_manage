@@ -1,6 +1,9 @@
 package com.halfsummer.management.arrangements.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.halfsummer.baseframework.util.UuidUtil;
+import com.halfsummer.management.arrangements.entity.CourseArrangements;
 import com.halfsummer.management.arrangements.entity.Questionnaire;
 import com.halfsummer.management.arrangements.mapper.QuestionnaireMapper;
 import com.halfsummer.management.arrangements.request.AddQuestionnaireRequest;
@@ -34,8 +37,11 @@ public class QuestionnaireServiceImpl implements QuestionnaireService {
     }
 
     @Override
-    public List<Questionnaire> list(ListQuestionnaireRequest questionnaire) {
-        return null;
+    public PageInfo<Questionnaire> list(ListQuestionnaireRequest questionnaire) {
+        PageHelper.startPage(questionnaire.getPageNum(), questionnaire.getPageSize());
+        List<Questionnaire> list = questionnaireMapper.list(questionnaire);
+        PageInfo<Questionnaire> pageInfo = new PageInfo<>(list);
+        return pageInfo;
     }
 
     @Override
@@ -45,8 +51,14 @@ public class QuestionnaireServiceImpl implements QuestionnaireService {
 
     @Override
     public int update(UpdateQuestionnaireRequest questionnaire) {
-        Questionnaire questionnaire1 = new Questionnaire();
-        BeanUtils.copyProperties(questionnaire, questionnaire1);
+        Questionnaire questionnaire1 = questionnaireMapper.getById(questionnaire.getId());
+        questionnaire1.settitle1(questionnaire.gettitle1());
+        questionnaire1.settitle2(questionnaire.gettitle2());
+        questionnaire1.settitle3(questionnaire.gettitle3());
+        questionnaire1.settitle4(questionnaire.gettitle4());
+        questionnaire1.settitle5(questionnaire.gettitle5());
+        questionnaire1.settitle6(questionnaire.gettitle6());
+        questionnaire1.settitle7(questionnaire.gettitle7());
         return questionnaireMapper.update(questionnaire1);
     }
 }

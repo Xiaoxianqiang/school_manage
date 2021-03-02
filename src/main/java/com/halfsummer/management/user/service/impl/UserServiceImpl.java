@@ -1,6 +1,9 @@
 package com.halfsummer.management.user.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.halfsummer.baseframework.util.UuidUtil;
+import com.halfsummer.management.arrangements.entity.Questionnaire;
 import com.halfsummer.management.user.entity.User;
 import com.halfsummer.management.user.mapper.UserMapper;
 import com.halfsummer.management.user.request.AddUserRequest;
@@ -37,8 +40,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> list(ListUserRequest user) {
-        return userMapper.list(user);
+    public PageInfo<User> list(ListUserRequest user) {
+        PageHelper.startPage(user.getPageNum(), user.getPageSize());
+        List<User> list = userMapper.list(user);
+        PageInfo<User> pageInfo = new PageInfo<>(list);
+        return pageInfo;
     }
 
     @Override

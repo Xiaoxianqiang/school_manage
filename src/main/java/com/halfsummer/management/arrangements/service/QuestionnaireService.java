@@ -1,5 +1,6 @@
 package com.halfsummer.management.arrangements.service;
 
+import com.github.pagehelper.PageInfo;
 import com.halfsummer.management.arrangements.entity.Questionnaire;
 import com.halfsummer.management.arrangements.request.AddQuestionnaireRequest;
 import com.halfsummer.management.arrangements.request.ListQuestionnaireRequest;
@@ -26,7 +27,7 @@ public interface QuestionnaireService {
      * @param questionnaire
      * @return
      */
-    List<Questionnaire> list(ListQuestionnaireRequest questionnaire);
+    PageInfo<Questionnaire> list(ListQuestionnaireRequest questionnaire);
 
     /**
      * 删除问卷

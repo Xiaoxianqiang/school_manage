@@ -3,7 +3,7 @@
 <mapper namespace="com.halfsummer.management.user.mapper.SysUserMapper">
 
  	<!-- 根据主键获取单条记录 -->
-    <select id="getById" resultType="com.halfsummer.management.user.entity.SysUser">
+    <select id="getByName" resultType="com.halfsummer.management.user.entity.SysUser">
 		SELECT
 		*
 		FROM `sys_user`

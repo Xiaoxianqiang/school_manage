@@ -55,7 +55,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/halfsummer/management/user/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-77">
@@ -96,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/com/halfsummer/management/user/mapper/SysUserMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+            <state relative-caret-position="110">
+              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -241,10 +241,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/halfsummer/management/user/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/halfsummer/management/user/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/com/halfsummer/management/user/mapper/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/halfsummer/management/user/mapper/SysUserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/halfsummer/management/user/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/halfsummer/management/user/controller/SysUserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/halfsummer/management/arrangements/controller/CourseArrangementsController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/halfsummer/management/user/mapper/SysUserMapper.xml" />
       </list>
     </option>
   </component>
@@ -915,12 +915,12 @@
       <option name="presentableId" value="Default" />
       <updated>1614249624246</updated>
       <workItem from="1614249627954" duration="7576000" />
-      <workItem from="1614354299563" duration="54789000" />
+      <workItem from="1614354299563" duration="55331000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62365000" />
+    <option name="totallyTimeSpent" value="62907000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1505,13 +1505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/halfsummer/management/user/mapper/SysUserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/halfsummer/management/user/controller/SysUserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="562">
@@ -1540,6 +1533,13 @@
             <element signature="imports" expanded="true" />
             <marker date="1614694882058" expanded="true" signature="2169:2281" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/halfsummer/management/user/mapper/SysUserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
         </state>
       </provider>
     </entry>

@@ -16,6 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -58,6 +63,20 @@ public class CourseArrangementsController {
 
         return new ResultInfo(CommonEnum.SUCCESS.getResultCode(),
                 CommonEnum.SUCCESS.getResultMsg());
+    }
+    @RequestMapping("/today")
+    @ResponseBody
+    public ResultInfo today(@RequestBody TodayArrangementsRequest arrangements){
+        LocalDateTime todayStart = LocalDateTime.of(LocalDate.now(), LocalTime.MIN);//当天零点
+        LocalDateTime todayEnd = LocalDateTime.of(LocalDate.now(), LocalTime.MAX);//当天零点
+
+        arrangements.setStartTime(Date.from(todayStart.atZone(ZoneId.systemDefault()).toInstant()));
+        arrangements.setEndTime(Date.from(todayEnd.atZone(ZoneId.systemDefault()).toInstant()));
+
+        boolean today = courseArrangementsService.today(arrangements);
+
+        return new ResultInfo(CommonEnum.SUCCESS.getResultCode(),
+                CommonEnum.SUCCESS.getResultMsg(),today);
     }
     @RequestMapping("/list")
     @ResponseBody

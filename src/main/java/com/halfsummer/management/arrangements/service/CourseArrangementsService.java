@@ -30,6 +30,13 @@ public interface CourseArrangementsService {
     PageInfo<CourseArrangements> list(ListArrangementsRequest questionnaire);
 
     /**
+     * 今日提交
+     * @param arrangements
+     * @return
+     */
+    boolean today(TodayArrangementsRequest arrangements);
+
+    /**
      * 删除规划
      * @param id
      * @return

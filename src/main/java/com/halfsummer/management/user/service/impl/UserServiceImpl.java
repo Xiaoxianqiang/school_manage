@@ -5,7 +5,6 @@ import com.github.pagehelper.PageInfo;
 import com.halfsummer.baseframework.enums.CommonEnum;
 import com.halfsummer.baseframework.result.ResultInfo;
 import com.halfsummer.baseframework.util.UuidUtil;
-import com.halfsummer.management.arrangements.entity.Questionnaire;
 import com.halfsummer.management.user.entity.User;
 import com.halfsummer.management.user.mapper.UserMapper;
 import com.halfsummer.management.user.request.AddUserRequest;
@@ -31,7 +30,7 @@ public class UserServiceImpl implements UserService {
             return new ResultInfo(CommonEnum.DATA_NOT_EXIST.getResultCode(),
                     CommonEnum.DATA_NOT_EXIST.getResultMsg());
         }
-        if(user1.getPassword().equals(user.getPassword())){
+        if(!user1.getPassword().equals(user.getPassword())){
             return new ResultInfo(CommonEnum.PWD_ERROR.getResultCode(),
                     CommonEnum.PWD_ERROR.getResultMsg());
         }

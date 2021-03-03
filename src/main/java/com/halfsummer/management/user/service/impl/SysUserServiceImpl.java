@@ -22,7 +22,7 @@ public class SysUserServiceImpl implements SysUserService {
             return new ResultInfo(CommonEnum.DATA_NOT_EXIST.getResultCode(),
                     CommonEnum.DATA_NOT_EXIST.getResultMsg());
         }
-        if(byName.getPassword().equals(user.getPassword())){
+        if(!byName.getPassword().equals(user.getPassword())){
             return new ResultInfo(CommonEnum.PWD_ERROR.getResultCode(),
                     CommonEnum.PWD_ERROR.getResultMsg());
         }

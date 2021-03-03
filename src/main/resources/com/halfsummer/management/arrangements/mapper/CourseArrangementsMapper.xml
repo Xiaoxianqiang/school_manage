@@ -24,6 +24,16 @@
 		WHERE id = #{id}
 	</select>
 
+    <!-- 根据主键获取单条记录 -->
+    <select id="today" resultType="int" parameterType="com.halfsummer.management.arrangements.request.TodayArrangementsRequest">
+		SELECT
+        	count(1)
+		FROM `course_arrangements`
+		WHERE id = #{id}
+		and create_time > = #{startTime}
+		and create_time &lt; = #{endTime}
+	</select>
+
     <!-- 插入全部字段 -->
     <insert id="insert" parameterType="com.halfsummer.management.arrangements.entity.CourseArrangements">
         INSERT INTO `course_arrangements`

@@ -6,6 +6,7 @@ import com.halfsummer.management.arrangements.entity.CourseArrangementsDemo;
 import com.halfsummer.management.arrangements.request.CheckArrangementsRequest;
 import com.halfsummer.management.arrangements.request.ListArrangementsDemoRequest;
 import com.halfsummer.management.arrangements.request.ListArrangementsRequest;
+import com.halfsummer.management.arrangements.request.TodayArrangementsRequest;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -27,6 +28,13 @@ public interface CourseArrangementsMapper {
      * @return
      */
     int insert(CourseArrangements courseArrangements);
+
+    /**
+     * 今日提交
+     * @param arrangements
+     * @return
+     */
+    int today(TodayArrangementsRequest arrangements);
 
     /**
      * 删除模板

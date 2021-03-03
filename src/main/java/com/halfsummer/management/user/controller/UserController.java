@@ -18,6 +18,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+
     @Autowired
     private UserService userService;
 
@@ -42,6 +43,7 @@ public class UserController {
         return login;
 
     }
+
     /**
      * 新增
      * @return
@@ -53,6 +55,15 @@ public class UserController {
 
         return new ResultInfo(CommonEnum.SUCCESS.getResultCode(),
                 CommonEnum.SUCCESS.getResultMsg(),byId);
+    }
+
+    @RequestMapping("/delete")
+    @ResponseBody
+    public ResultInfo add(@RequestBody DeleteUserRequest user, HttpServletRequest request){
+        userService.delete(user.getId());
+
+        return new ResultInfo(CommonEnum.SUCCESS.getResultCode(),
+                CommonEnum.SUCCESS.getResultMsg());
     }
 
     /**
@@ -91,6 +102,7 @@ public class UserController {
         return new ResultInfo(CommonEnum.SUCCESS.getResultCode(),
                 CommonEnum.SUCCESS.getResultMsg());
     }
+
     /**
      * 修改用户信息
      * @return

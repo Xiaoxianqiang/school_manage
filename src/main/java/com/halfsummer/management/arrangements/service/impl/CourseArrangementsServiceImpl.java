@@ -4,8 +4,6 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.halfsummer.baseframework.util.UuidUtil;
 import com.halfsummer.management.arrangements.entity.CourseArrangements;
-import com.halfsummer.management.arrangements.entity.CourseArrangementsDemo;
-import com.halfsummer.management.arrangements.mapper.CourseArrangementsDemoMapper;
 import com.halfsummer.management.arrangements.mapper.CourseArrangementsMapper;
 import com.halfsummer.management.arrangements.request.*;
 import com.halfsummer.management.arrangements.service.CourseArrangementsService;
@@ -40,6 +38,11 @@ public class CourseArrangementsServiceImpl implements CourseArrangementsService 
         List<CourseArrangements> list = courseArrangementsMapper.list(questionnaire);
         PageInfo<CourseArrangements> pageInfo = new PageInfo<>(list);
         return pageInfo;
+    }
+
+    @Override
+    public boolean today(TodayArrangementsRequest arrangements) {
+        return courseArrangementsMapper.today(arrangements)>0;
     }
 
     @Override

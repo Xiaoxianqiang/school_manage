@@ -45,7 +45,7 @@ public class UserController {
     }
 
     /**
-     * 新增
+     * 查询根据id
      * @return
      */
     @RequestMapping("/query")

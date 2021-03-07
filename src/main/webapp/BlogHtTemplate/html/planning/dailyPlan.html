@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定制规划</title>
+    <link href="/BlogHtTemplate/plugin/layui/css/layui.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-row" style="margin-top: 10px">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <div class="layui-form-label">每日规划</div>
+                <div class="layui-input-block " style="padding-right: 20px;">
+                    <textarea name="plan" placeholder="请输入内容" lay-verify="required" class="layui-textarea"></textarea>
+                </div>
+            </div>
+<!--            <div class="layui-form-item">-->
+<!--                <label class="layui-form-label">日期选择</label>-->
+<!--                <div class="layui-input-inline">-->
+<!--                    <input type="text" name="createTime" id="date" lay-verify="required" placeholder="yyyy-MM-dd"-->
+<!--                           autocomplete="off"-->
+<!--                           class="layui-input">-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="layui-form-item" style="margin-top:25px;margin-bottom:0;">
+                <div class="layui-input-block">
+                    <button class="layui-btn" style="width:230px;" lay-submit="" lay-filter="tureRegistered">提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+<script src="/BlogHtTemplate/plugin/layui/layui.js"></script>
+<script>
+    // //全局配置
+    layui.config({
+        base: '/BlogHtTemplate/js/'
+    }).use('dailyPlan');
+</script>
+</html>

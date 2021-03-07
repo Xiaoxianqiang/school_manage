@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../plugin/layui/css/layui.css" rel="stylesheet" />
+
+</head>
+<style>
+
+    .input-val {
+        background: #ffffff;
+        height: 2.8rem;
+        padding: 0 2%;
+        border-radius: 5px;
+        border: none;
+        border: 1px solid rgba(0,0,0,.2);
+        font-size: 1.0625rem;
+        width: 55%;
+    }
+    #canvas {
+        float: right;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+        height: 48px;
+    }
+</style>
+<body>
+
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <label class="layui-form-label">姓名</label>
+            <div class="layui-input-inline pm-login-input">
+                <input type="text" name="name" lay-verify="required" placeholder="请输入姓名" value="" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">性别</label>
+            <div class="layui-input-block">
+                <input type="radio" name="gender" value="0" title="男">
+                <input type="radio" name="gender" value="1" title="女" checked>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">班级</label>
+            <div class="layui-input-inline pm-login-input">
+                <input type="text" name="classGrade" lay-verify="account" placeholder="请输入班级" value="" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">账号</label>
+            <div class="layui-input-inline pm-login-input">
+                <input type="text" name="userNo" lay-verify="account" placeholder="请输入账号" value="" autocomplete="off"
+                    class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-inline pm-login-input">
+                <input type="password" name="password" lay-verify="passWord" placeholder="请输入密码" value=""
+                    autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">身份</label>
+            <div class="layui-input-block">
+                <input type="radio" name="roleId" value="10001" title="辅导员">
+                <input type="radio" name="roleId" value="10002" title="学生" checked>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">验证码</label>
+            <div class="layui-input-inline pm-login-input">
+                <input class="input-val " type="password" name="code"  lay-verify="required" placeholder="请输入验证码" value=""
+                    autocomplete="off" class="layui-input" style="width: 55%;" >
+                    <img src="/user/auth/code" id="canvas" width="100" height="43" title="点击更换验证码" onclick="this.src='/user/auth/code'"></img>
+
+            </div>
+        </div>
+        <div class="layui-form-item" style="margin-top:25px;margin-bottom:0;">
+            <div class="layui-input-block">
+                <button class="layui-btn" style="width:230px;" lay-submit="" lay-filter="tureRegistered">注册</button>
+            </div>
+        </div>
+    </form>
+</body>
+<script src="../plugin/layui/layui.js"></script>
+<script>
+    layui.config({
+        base: '/BlogHtTemplate/js/'
+    }).use('registered');
+
+</script>
+
+</html>

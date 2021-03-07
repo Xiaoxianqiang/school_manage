@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/BlogHtTemplate/plugin/layui/css/layui.css" rel="stylesheet" />
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-row" style="margin-top: 10px">
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">姓名</label>
+                <div class="layui-input-inline pm-login-input">
+                    <input type="text" id="name" name="name" lay-verify="required" placeholder="请输入姓名" value=""
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">性别</label>
+                <div class="layui-input-block">
+                    <input type="radio" name="gender" value="0" title="女">
+                    <input type="radio" name="gender" value="1" title="男" >
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">班级</label>
+                <div class="layui-input-inline pm-login-input">
+                    <input type="text" id="classGrade" name="classGrade" lay-verify="required" placeholder="请输入班级" value=""
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">账号</label>
+                <div class="layui-input-inline pm-login-input">
+                    <input type="text"  id="userNo" name="userNo" lay-verify="required" placeholder="请输入账号" value=""  class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-inline pm-login-input">
+                    <input type="password" id="password" name="password" lay-verify="required" placeholder="请输入密码" value=""  class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">身份</label>
+                <div class="layui-input-block">
+                    <input type="radio" name="roleId" value="10001" title="辅导员">
+                    <input type="radio" name="roleId" value="10002" title="学生" >
+                </div>
+            </div>
+            <div class="layui-form-item" style="margin-top:25px;margin-bottom:0;">
+                <div class="layui-input-block">
+                    <button class="layui-btn" style="width:230px;" lay-submit="" lay-filter="userUpdata">修改</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+<script src="/BlogHtTemplate/plugin/layui/layui.js"></script>
+<script>
+
+    //全局配置
+    layui.config({
+        base: '/BlogHtTemplate/js/'
+    }).use('userUpdata');
+</script>
+</html>

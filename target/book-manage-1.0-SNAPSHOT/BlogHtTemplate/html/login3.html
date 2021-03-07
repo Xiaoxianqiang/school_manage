@@ -1,0 +1,162 @@
+﻿<!--
+
+ @Name：不落阁后台模板源码
+ @Author：Absolutely
+ @Site：http://www.lyblogs.cn
+
+ -->
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>不落阁后台管理系统</title>
+    <link rel="shortcut icon" href="../images/Logo_40.png" type="image/x-icon">
+    <!-- layui.css -->
+    <link href="../plugin/layui/css/layui.css" rel="stylesheet" />
+    <!-- 本页样式 -->
+    <link href="../css/index.css" rel="stylesheet" />
+    <style>
+        .login {
+            min-height: 420px;
+            max-width: 420px;
+            padding: 40px;
+            background-color: #ffffff;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 4px;
+            /* margin-top: 120px; */
+            /* overflow-x: hidden; */
+            box-sizing: border-box;
+        }
+
+        .login a.logo {
+            display: block;
+            height: 58px;
+            width: 167px;
+            margin: 0 auto 30px auto;
+            background-size: 167px 42px;
+        }
+
+        .login .message {
+            margin: 10px 0 0 -58px;
+            padding: 18px 10px 18px 60px;
+            background: #189F92;
+            position: relative;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .login #darkbannerwrap {
+            background: url(../images/aiwrap.png);
+            width: 18px;
+            height: 10px;
+            margin: 0 0 20px -58px;
+            position: relative;
+        }
+
+        .login input[type=text],
+        .login input[type=file],
+        .login input[type=password],
+        .login input[type=email],
+        select {
+            border: 1px solid #DCDEE0;
+            vertical-align: middle;
+            border-radius: 3px;
+            height: 50px;
+            padding: 0px 16px;
+            font-size: 14px;
+            color: #555555;
+            outline: none;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .login input[type=text]:focus,
+        .login input[type=file]:focus,
+        .login input[type=password]:focus,
+        .login input[type=email]:focus,
+        select:focus {
+            border: 1px solid #27A9E3;
+        }
+
+        .login input[type=submit],
+        .login input[type=button] {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 12px 24px;
+            margin: 0px;
+            font-size: 18px;
+            line-height: 24px;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            color: #ffffff;
+            background-color: #189F92;
+            border-radius: 3px;
+            border: none;
+            -webkit-appearance: none;
+            outline: none;
+            width: 100%;
+        }
+
+        .login hr {
+            background: #fff url() 0 0 no-repeat;
+        }
+
+        .login hr.hr15 {
+            height: 15px;
+            border: none;
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+        }
+
+        .login hr.hr20 {
+            height: 20px;
+            border: none;
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+        }
+
+        .layui-btn-primary {
+            border: 1px solid #C9C9C9;
+            background-color: #fff;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="padding-top: 200px;">
+        <div class="login ">
+            <div class="message">不落阁后台模板源码</div>
+            <div id="darkbannerwrap"></div>
+            <form method="post" class="layui-form">
+                <input name="username" placeholder="用户名" type="text" lay-verify="required" class="layui-input">
+                <hr class="hr15">
+                <input name="password" lay-verify="required" placeholder="密码" type="password" class="layui-input">
+                <hr class="hr15">
+                <input value="登录" lay-submit lay-filter="login" style="width:100%;" type="submit">
+                <hr class="hr15">
+                <a href="http://www.layui.com" class="layui-btn layui-btn-primary">一个可跳转的按钮</a>
+                <hr class="hr20">
+            </form>
+        </div>
+    </div>
+
+    <!-- layui.js -->
+    <script src="../plugin/layui/layui.js"></script>
+    <!-- layui规范化用法 -->
+    <script type="text/javascript">
+        layui.config({
+            base: '../js/'
+        }).use('index');
+    </script>
+</body>
+
+</html>

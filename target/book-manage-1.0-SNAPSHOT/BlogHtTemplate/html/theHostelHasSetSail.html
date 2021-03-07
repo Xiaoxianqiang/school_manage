@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宿院新启航</title>
+    <link href="/BlogHtTemplate/plugin/layui/css/layui.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+<form class="layui-form" action="">
+    <div class="layui-form-item">
+        <div class="layui-input-block">1.你本人或家庭成員是否有被确认，疑似或被隔离的现象?<span style="color: #1E9FFF;">[单选]</span></div>
+        <div class="layui-input-block">
+            <input type="radio" name="title1" value="0" title="否" checked>
+            <input type="radio" name="title1" value="1" title="是" >
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">2.当日体温是否正常?<span style="color: #1E9FFF;">[单选]</span></div>
+        <div class="layui-input-block">
+            <input type="radio" name="title2" value="0" title="正常(小于37.3度)" checked>
+            <input type="radio" name="title2" value="1" title="异常(大于37.3度,请在最后一题填报具体数据)" >
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">3.是否接触过疫情中高风险疫区、境外入境人员，是否接触过确诊或疑似病患?<span style="color: #1E9FFF;">[单选]</span></div>
+        <div class="layui-input-block">
+            <input type="radio" name="title3" value="0" title="否" checked>
+            <input type="radio" name="title3" value="1" title="是" >
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">4.是否有跨地区出行情况?<span style="color: #1E9FFF;">[单选]</span></div>
+        <div class="layui-input-block">
+            <input type="radio" name="title4" value="0" title="否" checked>
+            <input type="radio" name="title4" value="1" title="是" >
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">5.更新后健康码(苏康码)的颜色?<span style="color: #1E9FFF;">[单选]</span></div>
+        <div class="layui-input-block">
+            <input type="radio" name="title5" value="0" title="绿色" checked>
+            <input type="radio" name="title5" value="1" title="红色或黄色" >
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">6.今日是否有与重点疫情国家(地区)回国人员(亲戚或人员)接触史?<span style="color: #1E9FFF;">[单选]</span></div>
+        <div class="layui-input-block">
+            <input type="radio" name="title6" value="1" title="有(请在最后一题说明)">
+            <input type="radio" name="title6" value="0" title="没有" checked>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">7.有无需要反馈的其他情况?(如乘车外出行为:行程、车次；体温异常等)<span style="color: #1E9FFF;">[填空]</span></div>
+        <div class="layui-input-block">
+            <textarea name="title7" placeholder="请输入内容" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item" style="margin-top:25px;margin-bottom:0;">
+        <div class="layui-input-block">
+            <button class="layui-btn"  style="width:230px;" lay-submit="" lay-filter="tureRegistered">提交</button>
+        </div>
+
+    </div>
+</form>
+</body>
+<script src="/BlogHtTemplate/plugin/layui/layui.js"></script>
+<script>
+    layui.config({
+        base: '/BlogHtTemplate/js/'
+    }).use('theHostelHasSetSail');
+</script>
+
+</html>

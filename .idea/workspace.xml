@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d976e82-3653-4f24-98ae-3855eda0a208" name="Default Changelist" comment="前端页面提交">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6d976e82-3653-4f24-98ae-3855eda0a208" name="Default Changelist" comment="前端页面提交" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -301,7 +299,7 @@
       <workItem from="1615028509027" duration="1004000" />
       <workItem from="1615029538151" duration="850000" />
       <workItem from="1615030410784" duration="968000" />
-      <workItem from="1615031402021" duration="5469000" />
+      <workItem from="1615031402021" duration="5474000" />
     </task>
     <task id="LOCAL-00001" summary="提交静态资源的配置">
       <created>1614756273065</created>
@@ -399,10 +397,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="513" y="260" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1614945978810" />
-    <state x="373" y="10" key="CommitChangelistDialog2" timestamp="1615096852538">
+    <state x="373" y="10" key="CommitChangelistDialog2" timestamp="1615101456135">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="373" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1615096852538" />
+    <state x="373" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1615101456135" />
     <state x="2" y="108" width="1554" height="687" key="DiffContextDialog" timestamp="1614757527112">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -483,10 +481,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="507" y="119" key="VCS.ChangeListViewerDialog/0.0.1536.824@0.0.1536.824" timestamp="1614755694555" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1615096888769">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1615101575556">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1615096888769" />
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1615101575556" />
     <state x="461" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1615031472091">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
